@@ -61,3 +61,6 @@ def get_current_user(token: str = Depends(oauth2_scheme)):
 @app.get("/profile")
 def read_profile(current_user: dict = Depends(get_current_user)):
     return {"message": f"Hello, {current_user['username']}! Welcome to your profile."}
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0',port=5000)
